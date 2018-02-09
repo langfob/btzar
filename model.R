@@ -12,7 +12,7 @@ cat ("\n\nIn btzar::model.R()\n\n")
 print (parameters)
 cat ("\nDone with btzar::model.R()\n")
 
-#xu_paper_main (parameters, emulating_tzar=FALSE)
+xu_paper_main (parameters, emulating_tzar=FALSE)
 
 #===============================================================================
 
