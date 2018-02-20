@@ -90,7 +90,7 @@ base_params:
     #--------------------
 
     set_rand_seed_at_creation_of_all_new_major_objects: FALSE
-    bdpg_run_init_rand_seed: 1763688087
+#XXX#    bdpg_run_init_rand_seed: 1763688087
 
     #--------------------
 
@@ -247,7 +247,7 @@ repetitions:
           generator_type: linear_step
           start: 1                                  #1010
           step_size: 1
-          count: 1  #00              #10
+          count: 2  #XXX#
 
     #---------------------------------------------------------------------------
 
