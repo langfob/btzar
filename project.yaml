@@ -243,11 +243,11 @@ scenarios:
 
 repetitions:
     generators:
-        - key: seed        #rds_file_set_element_idx         #seed
+        - key: idx        #rds_file_set_element_idx         #seed
           generator_type: linear_step
           start: 1                                  #1010
           step_size: 1
-          count: 7  #XXX#
+          count: 100  #XXX#
 
     #---------------------------------------------------------------------------
 
