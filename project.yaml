@@ -132,7 +132,7 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    compute_network_metrics: FALSE    #  if FALSE, overrides all other network flags below
+    compute_network_metrics: TRUE    #  if FALSE, overrides all other network flags below
 
     compute_network_metrics_base_COR: TRUE
     compute_network_metrics_base_APP: TRUE
@@ -143,8 +143,8 @@ base_params:
 
     use_bipartite_metrics: TRUE
     #bipartite_metrics_to_use:     "ALLBUTDD"
-#    bipartite_metrics_to_use:     "all_except_slow_indices"
-    bipartite_metrics_to_use:     "quick_test"
+    bipartite_metrics_to_use:     "all_except_slow_indices"
+#    bipartite_metrics_to_use:     "quick_test"
 
     #---------------------------------------------------------------------------
 
