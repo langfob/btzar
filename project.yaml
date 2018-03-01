@@ -157,6 +157,7 @@ base_params:
     #---------------------------------------------------------------------------
 
     gen_20_basic_variants: TRUE
+    gen_basic_variants_err_amt: 0.02    #0.05
 
     gen_4_basic_variants: FALSE
 
