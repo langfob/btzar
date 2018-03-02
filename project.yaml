@@ -44,7 +44,7 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar test example with one run of 20 variants of a single easy 
+        Nectar test example with 100 runx of 20 variants of a single easy 
         Xu problem and all reserve selectors except gurobi, since no nectar 
         licensing on that yet.
 
@@ -157,7 +157,7 @@ base_params:
     #---------------------------------------------------------------------------
 
     gen_20_basic_variants: TRUE
-    gen_basic_variants_err_amt: 0.02    #0.05
+    gen_basic_variants_err_amt: 0.10    #0.02    #0.05
 
     gen_4_basic_variants: FALSE
 
