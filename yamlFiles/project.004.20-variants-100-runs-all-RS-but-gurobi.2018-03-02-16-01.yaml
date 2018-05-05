@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_20_variants_all_rs_easy_base_05_err_amt_4_reps_for_1st_gurobi_nectar_test
+project_name: bdpg_20_variants_all_rs_but_gurobi_1_easy_base
 runner_class: RRunner
 
 #===============================================================================
@@ -44,11 +44,12 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar test example with one run of 20 variants of a single easy
-        Xu problem and all reserve selectors.
+        Nectar test example with 100 runx of 20 variants of a single easy 
+        Xu problem and all reserve selectors except gurobi, since no nectar 
+        licensing on that yet.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpg20varAllRS"
+    runset_abbrev: "bdpg20varAllRSbutGurobi"
 
     run_id: $$run_id$$
 
@@ -65,6 +66,23 @@ base_params:
 #    given_correct_solution_cost: 420
 
     #--------------------
+
+        #  NOTE that the choice of random seed in the yaml file is important
+        #  for this single run test because the example creates a test problem
+        #  based on drawing the control parameters from a random distribution.
+        #  When the seed was 111, the test crashed with the message below.
+        #  When I changed it to 701, it ran to completion.
+        #       Failing:  max_possible_tot_num_links ( 3291 ) > maximum allowed ( 2000 ).
+        #       Save workspace image to ~/D/rdv-framework/projects/rdvPackages/biodivprobgen/.RData? [y/n/c]:
+        #  However, the fail was just what it was supposed to do when those
+        #  parameters came up, so the yaml file could be changed to use 111
+        #  instead of 701 if you want to induce a crash to test that error
+        #  trapping.
+#    seed: 701
+
+        #  2017 12 06 - BTL
+        #  Instead, you could just set the total number of links or spp
+        #  to some tiny amount that was sure to fail.
 
 #    max_allowed_possible_tot_num_links: 1500    #  no longer used?  2018 01 21 - BTL
     max_allowed_num_spp: 700  #2000
@@ -139,7 +157,7 @@ base_params:
     #---------------------------------------------------------------------------
 
     gen_20_basic_variants: TRUE
-    gen_basic_variants_err_amt: 0.05    #0.15    #0.10
+    gen_basic_variants_err_amt: 0.10    #0.02    #0.05
 
     gen_4_basic_variants: FALSE
 
@@ -147,10 +165,10 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    do_gurobi: TRUE
+    do_gurobi: FALSE
 
     use_given_time_as_limit: FALSE
-    time_limit: 30    #22
+    time_limit: 22
     use_marxan_time_as_limit: FALSE
 
     use_gap_limit: FALSE
@@ -188,28 +206,28 @@ scenarios:
 
             #--------------------
 
-#CRUFT REMOVAL#    #####            apply_error_to_spp_occupancy_data: TRUE
-#CRUFT REMOVAL#                apply_error_to_COR: TRUE
+#####            apply_error_to_spp_occupancy_data: TRUE
+            apply_error_to_COR: TRUE
 
-#CRUFT REMOVAL#    #            match_error_counts: TRUE
-#CRUFT REMOVAL#                match_error_counts: FALSE
+#            match_error_counts: TRUE
+            match_error_counts: FALSE
 
             #--------------------
 
                 #  Constant errors
 
-#CRUFT REMOVAL#                spp_occ_FP_error_type: "CONSTANT"
-#CRUFT REMOVAL#                spp_occ_FP_const_rate: 0.05  #0  #0.1
+            spp_occ_FP_error_type: "CONSTANT"
+            spp_occ_FP_const_rate: 0.05  #0  #0.1
 
-#CRUFT REMOVAL#                spp_occ_FN_error_type: "CONSTANT"
-#CRUFT REMOVAL#                spp_occ_FN_const_rate: 0  #0.1  #0.1
+            spp_occ_FN_error_type: "CONSTANT"
+            spp_occ_FN_const_rate: 0  #0.1  #0.1
 
     #--------------------
 
                 #  Parameters for building a multi-problem by wrapping a lognormal
                 #  distribution around a base Xu problem.
 
-#CRUFT REMOVAL#            gen_multi_bdproblem: TRUE
+            gen_multi_bdproblem: TRUE
             wrap_lognormal_dist_around_Xu: TRUE
             allow_imperfect_wrap: TRUE    #  new variable - BTL - 2017 12 13
             desired_Xu_spp_frac_of_all_spp: 0.5
@@ -217,8 +235,9 @@ scenarios:
             desired_max_abundance_frac: 0.7
             dep_set_PUs_eligible: FALSE
             add_one_to_lognormal_abundances: FALSE
-#CRUFT REMOVAL#    #            seed_value_for_search: 11    #  no longer set this way - BTL - 2017 12 13
+#            seed_value_for_search: 11    #  no longer set this way - BTL - 2017 12 13
             max_search_iterations: 500
+
             plot_rounded_abundances: TRUE
 
     #---------------------------------------------------------------------------
@@ -229,7 +248,7 @@ repetitions:
           generator_type: linear_step
           start: 1                                  #1010
           step_size: 1
-          count: 4    #100  #XXX#
+          count: 100  #XXX#
 
     #---------------------------------------------------------------------------
 
