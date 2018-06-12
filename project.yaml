@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: btzar
+project_name: Easy
 runner_class: RRunner
 
 #===============================================================================
@@ -10,12 +10,24 @@ base_params:
     full_output_dir_with_slash: $$output_path$$
 
     runset_name:   $$runset$$
-    runset_abbrev: "First tests of bdpg and tzar under btzar"
+    runset_abbrev: "Easy_1_COR_prob"
     run_id:        $$run_id$$
 
     #--------------------
 
+    bdpg_run_init_rand_seed: 1763688087
+
+    #--------------------
+
     single_action_using_tzar_reps: TRUE
+    gen_COR_prob: TRUE
+
+    #--------------------
+
+    n__num_groups: 5
+    alpha__: 0.8
+    p__prop_of_links_between_groups: 0.5
+    r__density: 0.5
 
 #===============================================================================
 
