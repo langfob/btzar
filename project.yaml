@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_20_variants_all_rs_and_network_metrics_1_easy_base
+project_name: bdpg_20_variants_all_rs_network_metrics_easy_base_05_err_amt_4_reps_for_1st_multi_exp_gurobi_nectar_test
 runner_class: RRunner
 
 #===============================================================================
@@ -44,17 +44,15 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar test example with one run of 20 variants of a single easy 
-        Xu problem and all reserve selectors and with all network metrics 
-        computed.  Basically, this is the first full test of 1 instance of the 
-        full experiment that is to be replicated many times on nectar.
+        Nectar test example with 4 runs of 20 variants of a single easy
+        Xu problem with all reserve selectors and network metrics.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpg20varAllRSAndAllNetworkMetrics1Easy"
+    runset_abbrev: "bdpg20varAllRS4runs"
 
     run_id: $$run_id$$
 
-    yaml_file_stored_as: "project.005.bdpg_20_variants_all_rs_and_network_metrics_1_easy.2018-06-13-16-26.yaml"
+    yaml_file_stored_as: "project.006.bdpg_20_variants_all_rs_network_metrics_easy_base_05_err_amt_4_reps_for_1st_multi_exp_gurobi_nectar_test.2018-06-13-19-37.yaml"
 
     #--------------------
 
@@ -70,30 +68,13 @@ base_params:
 
     #--------------------
 
-        #  NOTE that the choice of random seed in the yaml file is important
-        #  for this single run test because the example creates a test problem
-        #  based on drawing the control parameters from a random distribution.
-        #  When the seed was 111, the test crashed with the message below.
-        #  When I changed it to 701, it ran to completion.
-        #       Failing:  max_possible_tot_num_links ( 3291 ) > maximum allowed ( 2000 ).
-        #       Save workspace image to ~/D/rdv-framework/projects/rdvPackages/biodivprobgen/.RData? [y/n/c]:
-        #  However, the fail was just what it was supposed to do when those
-        #  parameters came up, so the yaml file could be changed to use 111
-        #  instead of 701 if you want to induce a crash to test that error
-        #  trapping.
-#    seed: 701
-
-        #  2017 12 06 - BTL
-        #  Instead, you could just set the total number of links or spp
-        #  to some tiny amount that was sure to fail.
-
 #    max_allowed_possible_tot_num_links: 1500    #  no longer used?  2018 01 21 - BTL
     max_allowed_num_spp: 700  #2000
 
     #--------------------
 
     set_rand_seed_at_creation_of_all_new_major_objects: FALSE
-    bdpg_run_init_rand_seed: 1763688087
+#XXX#    bdpg_run_init_rand_seed: 1763688087
 
     #--------------------
 
@@ -146,8 +127,8 @@ base_params:
 
     use_bipartite_metrics: TRUE
     #bipartite_metrics_to_use:     "ALLBUTDD"
-#    bipartite_metrics_to_use:     "all_except_slow_indices"
-    bipartite_metrics_to_use:     "quick_test"
+    bipartite_metrics_to_use:     "all_except_slow_indices"
+#    bipartite_metrics_to_use:     "quick_test"
 
     #---------------------------------------------------------------------------
 
@@ -160,6 +141,7 @@ base_params:
     #---------------------------------------------------------------------------
 
     gen_20_basic_variants: TRUE
+    gen_basic_variants_err_amt: 0.05    #0.15    #0.10
 
     gen_4_basic_variants: FALSE
 
@@ -170,7 +152,7 @@ base_params:
     do_gurobi: TRUE
 
     use_given_time_as_limit: FALSE
-    time_limit: 22
+    time_limit: 30    #22
     use_marxan_time_as_limit: FALSE
 
     use_gap_limit: FALSE
@@ -208,28 +190,28 @@ scenarios:
 
             #--------------------
 
-#####            apply_error_to_spp_occupancy_data: TRUE
-            apply_error_to_COR: TRUE
+#CRUFT REMOVAL#    #####            apply_error_to_spp_occupancy_data: TRUE
+#CRUFT REMOVAL#                apply_error_to_COR: TRUE
 
-#            match_error_counts: TRUE
-            match_error_counts: FALSE
+#CRUFT REMOVAL#    #            match_error_counts: TRUE
+#CRUFT REMOVAL#                match_error_counts: FALSE
 
             #--------------------
 
                 #  Constant errors
 
-            spp_occ_FP_error_type: "CONSTANT"
-            spp_occ_FP_const_rate: 0.05  #0  #0.1
+#CRUFT REMOVAL#                spp_occ_FP_error_type: "CONSTANT"
+#CRUFT REMOVAL#                spp_occ_FP_const_rate: 0.05  #0  #0.1
 
-            spp_occ_FN_error_type: "CONSTANT"
-            spp_occ_FN_const_rate: 0  #0.1  #0.1
+#CRUFT REMOVAL#                spp_occ_FN_error_type: "CONSTANT"
+#CRUFT REMOVAL#                spp_occ_FN_const_rate: 0  #0.1  #0.1
 
     #--------------------
 
                 #  Parameters for building a multi-problem by wrapping a lognormal
                 #  distribution around a base Xu problem.
 
-            gen_multi_bdproblem: TRUE
+#CRUFT REMOVAL#            gen_multi_bdproblem: TRUE
             wrap_lognormal_dist_around_Xu: TRUE
             allow_imperfect_wrap: TRUE    #  new variable - BTL - 2017 12 13
             desired_Xu_spp_frac_of_all_spp: 0.5
@@ -237,20 +219,19 @@ scenarios:
             desired_max_abundance_frac: 0.7
             dep_set_PUs_eligible: FALSE
             add_one_to_lognormal_abundances: FALSE
-#            seed_value_for_search: 11    #  no longer set this way - BTL - 2017 12 13
+#CRUFT REMOVAL#    #            seed_value_for_search: 11    #  no longer set this way - BTL - 2017 12 13
             max_search_iterations: 500
-
             plot_rounded_abundances: TRUE
 
     #---------------------------------------------------------------------------
 
 repetitions:
     generators:
-        - key: seed        #rds_file_set_element_idx         #seed
+        - key: idx        #rds_file_set_element_idx         #seed
           generator_type: linear_step
           start: 1                                  #1010
           step_size: 1
-          count: 1  #00              #10
+          count: 4    #100  #XXX#
 
     #---------------------------------------------------------------------------
 
