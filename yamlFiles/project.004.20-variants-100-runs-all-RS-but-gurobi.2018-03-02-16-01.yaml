@@ -53,6 +53,8 @@ base_params:
 
     run_id: $$run_id$$
 
+    yaml_file_stored_as: "project.004.20-variants-100-runs-all-RS-but-gurobi.2018-03-02-16-01.yaml"
+
     #--------------------
 
         #  If you're reading the Xu problem from a file in Xu's benchmark

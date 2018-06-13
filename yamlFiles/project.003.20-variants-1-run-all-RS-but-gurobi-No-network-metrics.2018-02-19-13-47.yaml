@@ -46,12 +46,15 @@ base_params:
     runset_description: |
         Nectar test example with one run of 20 variants of a single easy 
         Xu problem and all reserve selectors except gurobi, since no nectar 
-        licensing on that yet.
+        licensing on that yet.  Also, no network metrics are computed, 
+        to make for a quicker test.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpg20varAllRSbutGurobi"
+    runset_abbrev: "bdpg20varAllRSbutGurobiNoNetworkMetrics"
 
     run_id: $$run_id$$
+
+    yaml_file_stored_as: "project.003.20-variants-1-run-all-RS-but-gurobi-No-network-metrics.2018-02-19-13-47.yaml"
 
     #--------------------
 

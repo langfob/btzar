@@ -13,6 +13,8 @@ base_params:
     runset_abbrev: "Easy_1_COR_prob"
     run_id:        $$run_id$$
 
+    yaml_file_stored_as: "project.002.Easy_single_action_gen_1_COR.2018_02_02_10_53.yaml"
+
     #--------------------
 
     bdpg_run_init_rand_seed: 1763688087
