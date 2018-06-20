@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_20_variants_all_rs_but_gurobi_1_easy_base
+project_name: bdpg_20_variants_gurobi_only_1_easy_base
 runner_class: RRunner
 
 #===============================================================================
@@ -45,16 +45,16 @@ base_params:
             #  then use a ">" in place of the "|".
     runset_description: |
         Nectar test example with one run of 20 variants of a single easy 
-        Xu problem and all reserve selectors except gurobi, since no nectar 
-        licensing on that yet.  Also, no network metrics are computed, 
+        Xu problem and no reserve selectors except gurobi, as first test 
+        of using gurobi on nectar.  Also, no network metrics are computed, 
         to make for a quicker test.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpg20varAllRSbutGurobiNoNetworkMetrics"
+    runset_abbrev: "bdpg20varGurobiOnlyNoNetworkMetrics"
 
     run_id: $$run_id$$
 
-    yaml_file_stored_as: "project.003.20-variants-1-run-all-RS-but-gurobi-No-network-metrics.2018-02-19-13-47.yaml"
+    yaml_file_stored_as: "project.004.20-variants-1-run-Gurobi-only-No-network-metrics.2018-06-13-13-26.yaml"
 
     #--------------------
 
@@ -167,7 +167,7 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    do_gurobi: FALSE
+    do_gurobi: TRUE
 
     use_given_time_as_limit: FALSE
     time_limit: 22
@@ -178,22 +178,22 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    run_marxan: TRUE
+    run_marxan: FALSE
 
     #---------------------------------------------------------------------------
 
-    do_simple_richness_forward: TRUE
-    do_simple_richness_backward: TRUE
+    do_simple_richness_forward: FALSE
+    do_simple_richness_backward: FALSE
 
     #---------------------------------------------------------------------------
 
-    do_unprotected_richness_forward: TRUE
-    do_unprotected_richness_backward: TRUE
+    do_unprotected_richness_forward: FALSE
+    do_unprotected_richness_backward: FALSE
 
     #---------------------------------------------------------------------------
 
-    do_zonation_like_forward: TRUE
-    do_zonation_like_backward: TRUE
+    do_zonation_like_forward: FALSE
+    do_zonation_like_backward: FALSE
 
     #---------------------------------------------------------------------------
 
