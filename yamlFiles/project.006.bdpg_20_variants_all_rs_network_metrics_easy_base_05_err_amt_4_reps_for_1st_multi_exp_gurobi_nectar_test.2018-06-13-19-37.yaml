@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_20_variants_all_rs_network_metrics_easy_base_05_err_amt_4_reps_for_1st_multi_exp_gurobi_nectar_test
+project_name: bdpg_006
 runner_class: RRunner
 
 #===============================================================================

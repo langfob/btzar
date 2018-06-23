@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_20_variants_all_rs_easy_base_05_err_amt_100_reps_for_1st_large_multi_exp_gurobi_nectar_test
+project_name: bdpg_007
 runner_class: RRunner
 
 #===============================================================================

@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_20_variants_all_rs_and_network_metrics_1_easy_base
+project_name: bdpg_005
 runner_class: RRunner
 
 #===============================================================================
