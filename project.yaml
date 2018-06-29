@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_014
+project_name: bdpg_003
 runner_class: RRunner
 
 #===============================================================================
@@ -44,17 +44,17 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar test example with one run of 20 variants of a single HARD 
-        Xu problem and no reserve selectors except gurobi, as first test 
-        of using gurobi on nectar.  Also, no network metrics are computed, 
+        Nectar test example with one run of 20 variants of a single easy 
+        Xu problem and all reserve selectors except gurobi, since no nectar 
+        licensing on that yet.  Also, no network metrics are computed, 
         to make for a quicker test.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpgHard20varGurobiOnlyNoNetworkMetrics"
+    runset_abbrev: "bdpg20varAllRSbutGurobiNoNetworkMetrics"
 
     run_id: $$run_id$$
 
-    yaml_file_stored_as: "project.014.hard-20-variants-1-run-Gurobi-only-No-network-metrics.2018-06-13-13-26.yaml"
+    yaml_file_stored_as: "project.003.20-variants-1-run-all-RS-but-gurobi-No-network-metrics.2018-02-19-13-47.yaml"
 
     #--------------------
 
@@ -167,7 +167,7 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    do_gurobi: TRUE
+    do_gurobi: FALSE
 
     use_given_time_as_limit: FALSE
     time_limit: 22
@@ -178,60 +178,33 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    run_marxan: FALSE
+    run_marxan: TRUE
 
     #---------------------------------------------------------------------------
 
-    do_simple_richness_forward: FALSE
-    do_simple_richness_backward: FALSE
+    do_simple_richness_forward: TRUE
+    do_simple_richness_backward: TRUE
 
     #---------------------------------------------------------------------------
 
-    do_unprotected_richness_forward: FALSE
-    do_unprotected_richness_backward: FALSE
+    do_unprotected_richness_forward: TRUE
+    do_unprotected_richness_backward: TRUE
 
     #---------------------------------------------------------------------------
 
-    do_zonation_like_forward: FALSE
-    do_zonation_like_backward: FALSE
+    do_zonation_like_forward: TRUE
+    do_zonation_like_backward: TRUE
 
     #---------------------------------------------------------------------------
 
 scenarios:
 
-            #-----------------------------------------------
-            #  Xu simple model hard case:
-            #      n in [8..100] while alpha = 0.52, r = 1
-            #-----------------------------------------------
-
-        #  Originally Taken from v700 project.yaml scenario:
-        #  scen_Xu_simple_model_hard_case_1__based_on_N
-        
-        #  2018 06 28 taken from bdpgxupaper/inst/yamlFiles/Original_full_set_of_actions/project.2017_08_24_09_11_am.full_with_section_for_each_action_type.yaml
-        #  scenario: marxan_simulated_annealing
-
-#    - name: easy
-#      parameters:
-#            n__num_groups: 5
-#            alpha__: 0.8
-#            p__prop_of_links_between_groups: 0.5
-#            r__density: 0.5
-
-    - name: hard
+    - name: easy
       parameters:
-            derive_alpha_from_n__num_groups_and_opt_frac_0.5: TRUE
-
-            use_unif_rand_n__num_groups: TRUE
-            n__num_groups_lower_bound: 61
-            n__num_groups_upper_bound: 80
-
-            use_unif_rand_r__density: TRUE
-            r__density_lower_bound: 0.01
-            r__density_upper_bound: 5.0
-
-            use_unif_rand_p__prop_of_links_between_groups: TRUE
-            p__prop_of_links_between_groups_lower_bound: 0.01
-            p__prop_of_links_between_groups_upper_bound: 0.99
+            n__num_groups: 5
+            alpha__: 0.8
+            p__prop_of_links_between_groups: 0.5
+            r__density: 0.5
 
             #--------------------
 
