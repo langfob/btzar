@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_014
+project_name: bdpg_014n
 runner_class: RRunner
 
 #===============================================================================
@@ -45,16 +45,16 @@ base_params:
             #  then use a ">" in place of the "|".
     runset_description: |
         Nectar test example with one run of 20 variants of a single HARD 
-        Xu problem and no reserve selectors except gurobi, as first test 
-        of using gurobi on nectar.  Also, no network metrics are computed, 
-        to make for a quicker test.
+        Xu problem and no reserve selectors except gurobi (with NO time limit), 
+        as first test of using gurobi on nectar.  Also, no network metrics 
+        are computed, to make for a quicker test.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpgHard20varGurobiOnlyNoNetworkMetrics"
+    runset_abbrev: "bdpgNgltHard20varGurobiOnlyNoNetworkMetrics"
 
     run_id: $$run_id$$
 
-    yaml_file_stored_as: "project.014.hard-20-variants-1-run-Gurobi-only-No-network-metrics.2018-06-13-13-26.yaml"
+    yaml_file_stored_as: "project.014.n.hard-YGLT-20-variants-1-run-Gurobi-only-No-network-metrics.2018-06-13-13-26.yaml"
 
     #--------------------
 
@@ -170,7 +170,7 @@ base_params:
     do_gurobi: TRUE
 
     use_given_time_as_limit: FALSE
-    time_limit: 22
+    time_limit: 3600    #  1 hour (in seconds)
     use_marxan_time_as_limit: FALSE
 
     use_gap_limit: FALSE
