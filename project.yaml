@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_014y
+project_name: bdpg_015y
 runner_class: RRunner
 
 #===============================================================================
@@ -44,17 +44,17 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar test example with one run of 20 variants of a single HARD 
+        Nectar test example with 10 runs of 20 variants of a single HARD 
         Xu problem and no reserve selectors except gurobi (WITH a time limit), 
         as first test of using gurobi on nectar.  Also, no network metrics 
         are computed, to make for a quicker test.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpgYgltHard20varGurobiOnlyNoNetworkMetrics"
+    runset_abbrev: "bdpgYgltHard10run20varGurobiOnlyNoNetworkMetrics"
 
     run_id: $$run_id$$
 
-    yaml_file_stored_as: "project.014.y.hard-YGLT-20-variants-1-run-Gurobi-only-No-network-metrics.2018-06-13-13-26.yaml"
+    yaml_file_stored_as: "project.015.y.hard-YGLT-20-variants-10-run-Gurobi-only-No-network-metrics.2018-06-13-13-26.yaml"
 
     #--------------------
 
@@ -93,7 +93,7 @@ base_params:
     #--------------------
 
     set_rand_seed_at_creation_of_all_new_major_objects: FALSE
-    bdpg_run_init_rand_seed: 1763688087
+#    bdpg_run_init_rand_seed: 1763688087
 
     #--------------------
 
@@ -170,7 +170,7 @@ base_params:
     do_gurobi: TRUE
 
     use_given_time_as_limit: TRUE
-    time_limit: 3600    #  1 hour (in seconds)
+    time_limit: 900    #  15 minutes (in seconds)  #  3600    #  1 hour (in seconds)
     use_marxan_time_as_limit: FALSE
 
     use_gap_limit: FALSE
@@ -277,7 +277,7 @@ repetitions:
           generator_type: linear_step
           start: 1                                  #1010
           step_size: 1
-          count: 1  #00              #10
+          count: 10  #00              #10
 
     #---------------------------------------------------------------------------
 
