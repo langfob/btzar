@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_016y
+project_name: bdpg_016y_marxan_rand_seed
 runner_class: RRunner
 
 #===============================================================================
@@ -166,7 +166,7 @@ base_params:
 
     #---------------------------------------------------------------------------
 
-    do_gurobi: TRUE
+    do_gurobi: FALSE
 
     use_given_time_as_limit: TRUE
     time_limit: 600    #  10 minutes (in seconds)  #  3600    #  1 hour (in seconds)
@@ -182,17 +182,17 @@ base_params:
     #---------------------------------------------------------------------------
 
     do_simple_richness_forward: TRUE
-    do_simple_richness_backward: TRUE
+    do_simple_richness_backward: FALSE
 
     #---------------------------------------------------------------------------
 
-    do_unprotected_richness_forward: TRUE
-    do_unprotected_richness_backward: TRUE
+    do_unprotected_richness_forward: FALSE
+    do_unprotected_richness_backward: FALSE
 
     #---------------------------------------------------------------------------
 
-    do_zonation_like_forward: TRUE
-    do_zonation_like_backward: TRUE
+    do_zonation_like_forward: FALSE
+    do_zonation_like_backward: FALSE
 
     #---------------------------------------------------------------------------
 
@@ -276,7 +276,7 @@ repetitions:
           generator_type: linear_step
           start: 1                                  #1010
           step_size: 1
-          count: 10  #00              #10
+          count: 1  #00              #10
 
     #---------------------------------------------------------------------------
 
