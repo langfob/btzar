@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: bdpg_018y
+project_name: bdpg_019y
 runner_class: RRunner
 
 #===============================================================================
@@ -47,14 +47,14 @@ base_params:
         Nectar test example with 100 runs of 20 variants of a single HARD 
         Xu problem and ALL reserve selectors including gurobi (WITH a time limit) 
         and network metrics, plus setting random seed at creation of all new 
-        major objects.  Error amount is 0.02.
+        major objects.  Error amount is 0.10.
 
     runset_name: $$runset$$
-    runset_abbrev: "bdpgYgltHard100run20varAllRsWithNetMetrics02err"
+    runset_abbrev: "bdpgYgltHard100run20varAllRsWithNetMetrics10err"
 
     run_id: $$run_id$$
 
-    yaml_file_stored_as: "project.018.y.hard-YGLT-20-variants-100-run-all-RS-With-net-metrics.02-err.2018-07-26-14-32.yaml"
+    yaml_file_stored_as: "project.019.y.hard-YGLT-20-variants-100-run-all-RS-With-net-metrics.10-err.2018-07-30-13-10.yaml"
 
     #--------------------
 
@@ -160,7 +160,7 @@ base_params:
     #---------------------------------------------------------------------------
 
     gen_20_basic_variants: TRUE
-    gen_basic_variants_err_amt: 0.02    #0.05    #0.075    #0.10    #0.15
+    gen_basic_variants_err_amt: 0.10    #0.02    #0.05    #0.075    #0.10    #0.15
 
     gen_4_basic_variants: FALSE
 
