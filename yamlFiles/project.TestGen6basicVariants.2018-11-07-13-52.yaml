@@ -43,7 +43,7 @@ base_params:
         random amount of error, all but slow network metrics, all reserve 
         selectors, gurobi time limited to marxan time.
 
-    yaml_file_stored_as: "project.TestGen6basicVariants.2018-11-08-12-30.yaml"
+    yaml_file_stored_as: "project.TestGen6basicVariants.2018-11-07-13-52.yaml"
 
     #---------------------------------------------------------------------------
 
@@ -159,12 +159,12 @@ base_params:
 ##                r__density: 5
 
     use_unif_rand_alpha__: TRUE
-    alpha___lower_bound: 0.2    
-    alpha___upper_bound: 0.6    #0.7        #1    #1.5
+    alpha___lower_bound: 0.2    #0
+    alpha___upper_bound: 0.7    #0.6    #1    #1.5
 
     use_unif_rand_n__num_groups: TRUE
-    n__num_groups_lower_bound: 8    #10        #2
-    n__num_groups_upper_bound: 20    #40        #15    #70
+    n__num_groups_lower_bound: 10    #8    #2
+    n__num_groups_upper_bound: 40    #20    #15    #70
 
     use_unif_rand_r__density: TRUE
     r__density_lower_bound: 0.8    #0.01
@@ -180,13 +180,7 @@ base_params:
 
     wrap_lognormal_dist_around_Xu: TRUE
     allow_imperfect_wrap: TRUE
-    
-#*******************************
-        #  Temporary dummy inverse value until bug fix is committed and reverses this
-#*******************************
-    desired_Xu_spp_frac_of_all_spp: 0.75        #0.25    #0.5          #  <------- should allow random?
-#*******************************
-    
+    desired_Xu_spp_frac_of_all_spp: 0.25    #0.5          #  <------- should allow random?
     solution_frac_of_landscape: 0.15    #0.3
     desired_max_abundance_frac: 0.7                       #  <------- should allow random?
     dep_set_PUs_eligible: FALSE
