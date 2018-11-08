@@ -150,7 +150,7 @@ base_params:
         #  Xu problem control parameters
         #---------------------------------
 
-    max_allowed_num_spp: 1200    #700  #2000
+    max_allowed_num_spp: 700    #1200        #700  #2000
     num_prob_size_retries_allowed: 20
 
 ##                n__num_groups: 80
