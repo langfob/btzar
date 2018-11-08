@@ -180,7 +180,13 @@ base_params:
 
     wrap_lognormal_dist_around_Xu: TRUE
     allow_imperfect_wrap: TRUE
-    desired_Xu_spp_frac_of_all_spp: 0.25    #0.5
+    
+#*******************************
+        #  Temporary dummy inverse value until bug fix is committed and reverses this
+#*******************************
+    desired_Xu_spp_frac_of_all_spp: 0.75        #0.25    #0.5          #  <------- should allow random?
+#*******************************
+    
     solution_frac_of_landscape: 0.15    #0.3
     desired_max_abundance_frac: 0.7
     dep_set_PUs_eligible: FALSE
