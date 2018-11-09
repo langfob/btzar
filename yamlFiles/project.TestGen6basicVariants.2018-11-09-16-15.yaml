@@ -1,6 +1,6 @@
 #===============================================================================
 
-project_name: TestGen6basicVariants
+project_name: ExpGen6basicVariants
 runner_class: RRunner
 
 #===============================================================================
@@ -39,9 +39,10 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar setup for 500 runs of 6 variants of a random Xu problem,
-        random amount of error, all but slow network metrics, all reserve 
-        selectors, gurobi time limited to marxan time.
+        Nectar setup for main experiment group of 500 runs of 6 variants 
+        of a random Xu problem, random amount of error, all but slow 
+        network metrics, all reserve selectors, gurobi time limited to 
+        marxan time.
 
     yaml_file_stored_as: "project.TestGen6basicVariants.2018-11-09-16-15.yaml"
 
