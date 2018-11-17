@@ -60,11 +60,11 @@ base_params:
     rand_seed_yaml_array:
         - 775280952 
         - 1380332469 
-        - 1572892665 
-        - 381123065 
-        - 1028866767 
-        - 1705774307 
-        - 1212330818 
+#        - 1572892665 
+#        - 381123065 
+#        - 1028866767 
+#        - 1705774307 
+#        - 1212330818 
 
     integerize_string: "round"
     duplicate_links_allowed: FALSE    #TRUE
