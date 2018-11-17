@@ -63,8 +63,8 @@ base_params:
 #        - 1572892665 
 #        - 381123065 
 #        - 1028866767 
-#        - 1705774307 
-#        - 1212330818 
+        - 1705774307 
+        - 1212330818 
 
     integerize_string: "round"
     duplicate_links_allowed: FALSE    #TRUE
@@ -213,7 +213,7 @@ repetitions:
           generator_type: linear_step
           start: 1
           step_size: 1
-          count: 7     #500    #100
+          count: 4     #500    #100
 
     #---------------------------------------------------------------------------
 
