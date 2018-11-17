@@ -58,8 +58,8 @@ base_params:
 
     get_full_run_rand_seed_from_yaml_array: TRUE
     rand_seed_yaml_array:
-        - 775280952 
-        - 1380332469 
+#        - 775280952 
+#        - 1380332469 
 #        - 1572892665 
 #        - 381123065 
 #        - 1028866767 
@@ -213,7 +213,7 @@ repetitions:
           generator_type: linear_step
           start: 1
           step_size: 1
-          count: 4     #500    #100
+          count: 2     #500    #100
 
     #---------------------------------------------------------------------------
 
