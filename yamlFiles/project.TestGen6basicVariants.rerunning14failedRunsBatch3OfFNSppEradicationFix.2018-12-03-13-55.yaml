@@ -55,20 +55,20 @@ base_params:
 
     get_full_run_rand_seed_from_yaml_array: TRUE
     rand_seed_yaml_array:
-        - 1712454319  #22473_default_scenario
-        - 1604593753  #22629_default_scenario
-        - 828202724   #22661_default_scenario
-        - 1891221523  #22663_default_scenario
-        - 1932751655  #22674_default_scenario
-        - 1707576751  #22678_default_scenario
-        - 317977905   #22681_default_scenario
-        - 1677917957  #22721_default_scenario
-        - 1645256042  #22722_default_scenario
-        - 207628726   #22781_default_scenario
-        - 219653129   #22827_default_scenario
-        - 1692812919  #22615_default_scenario.failed
-        - 315018177   #22665_default_scenario.failed
-        - 497029781   #22837_default_scenario.failed
+        - 1712454319  
+        - 1604593753 
+        - 828202724 
+        - 1891221523 
+        - 1932751655 
+        - 1707576751 
+        - 317977905 
+        - 1677917957 
+        - 1645256042 
+        - 207628726 
+        - 219653129 
+        - 1692812919 
+        - 315018177 
+        - 497029781 
 
     integerize_string: "round"
     duplicate_links_allowed: FALSE    #TRUE
@@ -212,8 +212,8 @@ base_params:
 
 repetitions:
     generators:
-        - key: cur_run_idx
-#        - key: cur_rand_seed_idx
+#        - key: cur_run_idx
+        - key: cur_rand_seed_idx
           generator_type: linear_step
           start: 1
           step_size: 1
