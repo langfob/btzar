@@ -39,34 +39,28 @@ base_params:
             #  If you don't want the newlines (i.e., you want one long string),
             #  then use a ">" in place of the "|".
     runset_description: |
-        Nectar setup for 6 reruns of batch 8 failed runs of  
+        Nectar setup for xlarge machine rerun of failed batch 7 run of  
         6 variants of a random Xu problem, random amount of error, all but slow 
         network metrics, all reserve selectors, gurobi time limited to 
         marxan time.  Now using the modified generator of FNs that 
         keeps FNs from causing total eradication of a few species and 
         back to a fixed value of desired_Xu_spp_frac_of_all_spp at 0.25.  
 
-    yaml_file_stored_as: "project.TestGen6basicVariants.11_reruns_of_batch_8_500_runs.2018-12-20-18-04.yaml"
+    yaml_file_stored_as: "project.TestGen6basicVariants.xlarge_rerun_of_1_batch_7_run.2018-12-28-13-05.yaml"
 
     #---------------------------------------------------------------------------
 
 #    set_rand_seed_at_creation_of_all_new_major_objects: FALSE
-#    bdpg_run_init_rand_seed: 1166992664    #  For run 21348_default_scenario
+    bdpg_run_init_rand_seed: 109694957    #  For run 25434_default_scenario
 
-    get_full_run_rand_seed_from_yaml_array: TRUE
-    rand_seed_yaml_array:
-        - 871855258 
-        - 246033191 
-        - 11970996 
-        - 839148521 
-        - 997451782 
-        - 1230879783 
-        - 463333606 
-        - 258748531 
-        - 129170894 
-        - 1527503013 
-        - 741525650 
-
+#     get_full_run_rand_seed_from_yaml_array: TRUE
+#     rand_seed_yaml_array:
+#         - 1953583717 
+#         - 1063786029 
+#         - 109694957 
+#         - 453857898 
+#         - 1958753585 
+#         - 512167453 
 
     integerize_string: "round"
     duplicate_links_allowed: FALSE    #TRUE
@@ -210,12 +204,12 @@ base_params:
 
 repetitions:
     generators:
-#        - key: cur_run_idx
-        - key: cur_rand_seed_idx
+        - key: cur_run_idx
+#        - key: cur_rand_seed_idx
           generator_type: linear_step
           start: 1
           step_size: 1
-          count: 11      #500
+          count: 1    #500
 
     #---------------------------------------------------------------------------
 
