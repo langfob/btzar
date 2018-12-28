@@ -204,8 +204,8 @@ base_params:
 
 repetitions:
     generators:
-#        - key: cur_run_idx
-        - key: cur_rand_seed_idx
+        - key: cur_run_idx
+#        - key: cur_rand_seed_idx
           generator_type: linear_step
           start: 1
           step_size: 1
