@@ -53,10 +53,10 @@ base_params:
 #    set_rand_seed_at_creation_of_all_new_major_objects: FALSE
 #    bdpg_run_init_rand_seed: 109694957    #  For run 25434_default_scenario
 
-     get_full_run_rand_seed_from_yaml_array: TRUE
-     rand_seed_yaml_array:
-         - 11970996 
-         - 741525650 
+    get_full_run_rand_seed_from_yaml_array: TRUE
+    rand_seed_yaml_array:
+        - 11970996
+        - 741525650
 
     integerize_string: "round"
     duplicate_links_allowed: FALSE    #TRUE
